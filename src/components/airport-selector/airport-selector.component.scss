@@ -1,0 +1,15 @@
+.columns{
+    margin: 10px;
+    .column{
+        border: 1px solid black;
+    }
+}
+
+.airportlist{
+    border: 1px solid black;
+    .single-airport{
+        border-bottom: 2px solid green;
+        display: inline-block;
+        margin: 5px;
+    }
+}

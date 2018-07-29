@@ -21,8 +21,4 @@ angular.module('myApp', [
         url: '',
         template: '<home-page></home-page>'
       });
-    // .state('', {
-    //   url: '/flight-list',
-    //   component: ''
-    // });
   });
