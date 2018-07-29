@@ -1,5 +1,5 @@
-<input placeholder="City or country" type="text" class="input is-medium" ng-change="$ctrl.showPane = true" ng-model="$ctrl.searchBy"
-/>
-<div class="airportlist" ng-show="$ctrl.showPane">
+<input placeholder="City or country" type="text" class="input is-medium" ng-change="$ctrl.onInputChange($ctrl.searchBy)"
+    ng-model="$ctrl.searchBy" />
+<div class="airportlist" ng-show="$ctrl.showPane && $ctrl.searchBy.length > 2">
     <span class="single-airport" ng-repeat="airport in $ctrl.airports | filter: $ctrl.searchBy" ng-click="$ctrl.chooseCity(airport.name)">{{airport.name}}</span>
 </div>

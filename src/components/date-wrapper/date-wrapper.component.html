@@ -20,30 +20,3 @@
     </date-selector>
   </div>
 </div>
-<div class="control is-horizontal">
-  <div class="control-label">
-    <label class="label">
-      From:
-    </label>
-  </div>
-
-  <div class="control">
-    <airport-selector airports="$ctrl.originsList" select-airport="$ctrl.selectOrigin(airport)"></airport-selector>
-  </div>
-
-  <div class="control-label">
-    <label class="label">
-      To:
-    </label>
-  </div>
-  <div class="control">
-    <airport-selector airports="$ctrl.dstinationsList" select-airport="$ctrl.selectDestination(airport)"></airport-selector>
-  </div>
-</div>
-
-<h1>
-  Your travel summary
-</h1>
-<pre>
-  {{$ctrl.travel}}
-</pre>

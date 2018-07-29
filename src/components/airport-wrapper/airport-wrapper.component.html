@@ -1,0 +1,20 @@
+<div class="control is-horizontal">
+    <div class="control-label">
+        <label class="label">
+            From:
+        </label>
+    </div>
+
+    <div class="control">
+        <airport-selector airports="$ctrl.originsList" select-airport="$ctrl.selectOrigin(airport)"></airport-selector>
+    </div>
+
+    <div class="control-label">
+        <label class="label">
+            To:
+        </label>
+    </div>
+    <div class="control">
+        <airport-selector airports="$ctrl.destinationsList" select-airport="$ctrl.selectDestination(airport)"></airport-selector>
+    </div>
+</div>
