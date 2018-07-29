@@ -11,14 +11,18 @@ angular.module('myApp', [
   uiRouter,
   Components
 ])
-.component('homePage', HomeComponent)
-.service('AiportsService', AirportsService)
-.service('CheapFlightService', CheapFlightService)
-.config(($stateProvider) => {
-  'ngInject';
-  $stateProvider
-    .state('home', {
-      url: '',
-      template: '<home-page></home-page>'
-    });
-});
+  .component('homePage', HomeComponent)
+  .service('AiportsService', AirportsService)
+  .service('CheapFlightService', CheapFlightService)
+  .config(($stateProvider) => {
+    'ngInject';
+    $stateProvider
+      .state('home', {
+        url: '',
+        template: '<home-page></home-page>'
+      });
+    // .state('', {
+    //   url: '/flight-list',
+    //   component: ''
+    // });
+  });
