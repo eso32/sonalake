@@ -28,7 +28,7 @@
   </div>
 
   <div class="control">
-    <airport-selector airports="$ctrl.airports" select-airport="$ctrl.selectOrigin(airport)"></airport-selector>
+    <airport-selector airports="$ctrl.originsList" select-airport="$ctrl.selectOrigin(airport)"></airport-selector>
   </div>
 
   <div class="control-label">
@@ -37,7 +37,7 @@
     </label>
   </div>
   <div class="control">
-    <airport-selector airports="$ctrl.airportFiltered" select-airport="$ctrl.selectDestination(airport)"></airport-selector>
+    <airport-selector airports="$ctrl.dstinationsList" select-airport="$ctrl.selectDestination(airport)"></airport-selector>
   </div>
 </div>
 
