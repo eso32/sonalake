@@ -21,13 +21,9 @@ export default function DateWrapperController(airportCode) {
         console.log('You have origin airport: ', airport);
 
         //updates list of destinations avaliable without of origin airport
-        ctrl.destinationsList = [...ctrl.airports].filter(singleAirport => singleAirport.name !== airport);
+        ctrl.destinationsList = [...ctrl.airports].filter(singleAirport => singleAirport.name !== airport.name);
 
-        // if (angular.equals(airport, ctrl.travel.to) && ctrl.travel.to) {
-        //   alert('cant do bro');
-        //   return
-        // }
-
+        ctrl.updateTravel({ travel: { origin: airport } })
         console.log('dest list', ctrl.destinationsList);
 
     }
@@ -38,7 +34,9 @@ export default function DateWrapperController(airportCode) {
 
         //updates list of origins
         let tempList = [...ctrl.airports];
-        ctrl.originsList = tempList.filter(singleAirport => singleAirport.name !== airport);
+        ctrl.originsList = tempList.filter(singleAirport => singleAirport.name !== airport.name);
+
+        ctrl.updateTravel({ travel: { dest: airport } })
 
     }
 }

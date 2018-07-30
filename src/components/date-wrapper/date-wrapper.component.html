@@ -1,22 +1,18 @@
-<div class="control is-horizontal">
-  <div class="control-label">
+<div>
+  <div class="control">
     <label class="label">
       Fly out:
     </label>
-  </div>
-
-  <div class="control">
-    <date-selector date="$ctrl.startDate">
+    <date-selector date="$ctrl.startDate"
+      update-time="$ctrl.updateStartTime(time)">
     </date-selector>
   </div>
-
-  <div class="control-label">
+  <div class="control">
     <label class="label">
       Fly back:
     </label>
-  </div>
-  <div class="control">
-    <date-selector date="$ctrl.endDate">
+    <date-selector date="$ctrl.endDate"
+      update-time="$ctrl.updateEndTime(time)">
     </date-selector>
   </div>
 </div>

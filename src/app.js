@@ -20,5 +20,17 @@ angular.module('myApp', [
       .state('home', {
         url: '',
         template: '<home-page></home-page>'
+      })
+      .state('home.flightList', {
+        url: '/flight-list/:origin/:originDate/:dest/:destDate',
+        component: 'flightList',
+        resolve: {
+          getParams: function ($stateParams, $http) {
+            console.log($stateParams);
+            return $http.get(`https://murmuring-ocean-10826.herokuapp.com/en/api/2/flights/from/${$stateParams.origin}/to/${$stateParams.dest}/${$stateParams.originDate}/${$stateParams.destDate}/250/unique/?limit=15&offset-0`).then(resp => {
+              return resp;
+            })
+          }
+        }
       });
   });

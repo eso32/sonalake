@@ -1,0 +1,19 @@
+$r-blue: #2b82ea;
+$r-darkblue: #271496;
+$r-yellow: #f0d000;
+
+date-selector{
+    input.input.is-large{
+        padding-left: 50px;
+        border: 2px solid $r-yellow;
+        &::-webkit-calendar-picker-indicator{
+            color: $r-blue;
+            height: 1.5em;
+            width: 1.5em;
+        }
+        &::-webkit-calendar-picker-indicator:hover{
+            background: none;
+            
+        }
+    }
+}

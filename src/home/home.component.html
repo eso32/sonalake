@@ -1,13 +1,18 @@
-<div>
-  <date-wrapper start-date="$ctrl.startDate" end-date="$ctrl.endDate">
-  </date-wrapper>
-  <airport-wrapper></airport-wrapper>
+<div class="container1">
+  <div class="search-pane">
+
+    <div class="box-components">
+      <airport-wrapper update-travel="$ctrl.updateTravel(travel)">
+      </airport-wrapper>
+      <date-wrapper start-date="$ctrl.startDate" end-date="$ctrl.endDate" update-travel="$ctrl.updateTravel(travel)">
+      </date-wrapper>
+    </div>
+
+    <div class="box-button">
+      <button ui-sref="home.flightList({origin: $ctrl.travel.origin.iata, originDate: $ctrl.travel.startDate, dest: $ctrl.travel.dest.iata, destDate: $ctrl.travel.endDate})">Go!</button>
+    </div>
+
+  </div>
 </div>
 
-
-<h1>
-  Your travel summary
-</h1>
-<pre>
-  {{$ctrl.travel}}
-</pre>
+<ui-view></ui-view>

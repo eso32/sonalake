@@ -1,10 +1,10 @@
 import template from './date-selector.component.html';
-import controller from './date-selector.controller';
+import './date-selector.component.scss';
 
 export const DateSelectorComponent = {
   bindings: {
-    date: '='
+    date: '<',
+    updateTime: '&'
   },
-  template,
-  controller
+  template
 };

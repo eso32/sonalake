@@ -1,0 +1,40 @@
+$r-blue: #2b82ea;
+$r-darkblue: #271496;
+$r-yellow: #f0d000;
+
+.container1{
+    margin: 50px;
+    .search-pane{
+        background: $r-blue;
+        border-radius: 10px;
+        border: 2px solid $r-yellow;
+        min-height: 200px;
+        position: relative;
+        .box-components{
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: inline-block;
+            width: 80%;
+            height: 100%;
+        }
+        .box-button{
+            position: absolute;
+            right: 0;
+            top: 0;
+            display: inline-block;
+            width: 20%;
+            height: 100%;
+            button{
+                position: absolute;
+                top: 10%;
+                left: 10%;
+                width: 80%;
+                height: 80%;
+                border-radius: 10px;
+                background: $r-yellow;
+                font-size: 50px
+            }
+        }
+    }
+}

@@ -10,7 +10,7 @@ export default function AirportSelectorController() {
     }
 
     ctrl.chooseCity = (airport) => {
-        ctrl.searchBy = airport;
+        ctrl.searchBy = airport.name;
         ctrl.showPane = false;
         ctrl.selectAirport({ airport });
     }
