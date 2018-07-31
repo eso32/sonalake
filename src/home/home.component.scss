@@ -2,39 +2,108 @@ $r-blue: #2b82ea;
 $r-darkblue: #271496;
 $r-yellow: #f0d000;
 
-.container1{
-    margin: 50px;
-    .search-pane{
-        background: $r-blue;
-        border-radius: 10px;
-        border: 2px solid $r-yellow;
-        min-height: 200px;
-        position: relative;
-        .box-components{
-            position: absolute;
-            top: 0;
-            left: 0;
-            display: inline-block;
-            width: 80%;
+home-page{
+    header{
+        background: $r-darkblue;
+        height: 70px;
+        .logo{
+            float: left;
             height: 100%;
         }
-        .box-button{
-            position: absolute;
-            right: 0;
-            top: 0;
-            display: inline-block;
-            width: 20%;
-            height: 100%;
-            button{
+    }
+    .container-centered{
+        margin: 50px;
+        .search-pane{
+            background: $r-blue;
+            border-radius: 10px;
+            border: 1px solid $r-darkblue;
+            min-height: 200px;
+            position: relative;
+            .box-components{
                 position: absolute;
-                top: 10%;
-                left: 10%;
+                top: 0;
+                left: 0;
+                display: inline-block;
                 width: 80%;
-                height: 80%;
-                border-radius: 10px;
-                background: $r-yellow;
-                font-size: 50px
+                height: 100%;
+            }
+            .box-button{
+                position: absolute;
+                right: 0;
+                top: 0;
+                display: inline-block;
+                width: 20%;
+                height: 100%;
+                button{
+                    position: absolute;
+                    top: 10%;
+                    left: 10%;
+                    width: 80%;
+                    height: 80%;
+                    border-radius: 10px;
+                    background: $r-yellow;
+                    color: $r-darkblue;
+                    font-size: 50px;
+                    border: none;
+                    overflow: hidden;
+                    cursor: pointer;
+                    svg{
+                        position: absolute;
+                        left: -50%;
+                        bottom: 0;
+                        width: 50%; 
+                        height: 50%;
+                        transform: rotate(30deg);
+                        animation-duration: 0.5s;
+                        animation-fill-mode: forwards;
+                        animation-timing-function: linear;
+                        fill: $r-darkblue;
+                    }
+                    &:hover{
+                        svg{
+                            animation-name: plane-waiting;
+
+                        }
+                    }
+                    &:active{
+                        svg{
+                            animation-name: plane-starting;
+
+                        }
+                    }
+                }
             }
         }
     }
+    
+    .container-full{
+        width: 100%;
+        min-height: 300px;
+        background: $r-blue;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        margin-bottom: 30px;
+    }
 }
+
+@keyframes plane-waiting {
+    from {
+        left: 0px
+    }
+    to {
+        left: 50px;
+    }
+}
+@keyframes plane-waiting {
+    from {
+        left:-50%;
+        bottom: 0px;
+        transform: rotate(30deg);    
+    }
+    to {
+        left:100%;
+        bottom: 50%;
+        transform: rotate(0deg);
+    }
+}
+

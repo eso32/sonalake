@@ -1,4 +1,4 @@
-export default function HomeController() {
+export default function HomeController($state) {
     'ngInject';
 
     const ctrl = this;
@@ -11,6 +11,16 @@ export default function HomeController() {
     ctrl.updateTravel = (travel) => {
         console.log('got object! ', travel);
         ctrl.travel = Object.assign(ctrl.travel, travel);
+    }
+
+    ctrl.findFlights = () => {
+        $state.go('home.flightList', {
+            origin: ctrl.travel.origin.iata, 
+            originDate: ctrl.travel.startDate, 
+            dest: ctrl.travel.dest.iata, 
+            destDate: ctrl.travel.endDate}
+        )
+
     }
 
 }

@@ -1,29 +1,30 @@
 $r-blue: #2b82ea;
 $r-darkblue: #271496;
 $r-yellow: #f0d000;
-
-.columns{
-    margin: 10px;
-    .column{
-        border: 1px solid black;
+airport-selector{
+    input.input{
+        &:active{
+            border: 3px;
+            border-color: $r-yellow;
+        }
     }
-}
-
-.airportlist{
-    position: absolute;
-    background: #f5f5f5;
-    font-size: 16px;
-    z-index: 999;
-    width: 90%;
-    .single-airport{
-        cursor: pointer;
-        display: inline-block;
-        margin: 5px;
-        padding: 4px;
-        border-radius: 4px;
-        &:hover{
-            background: $r-blue;
-            color: $r-yellow;
+    .airportlist{
+        position: absolute;
+        background: #f5f5f5;
+        font-size: 16px;
+        z-index: 999;
+        width: 90%;
+        .single-airport{
+            cursor: pointer;
+            display: inline-block;
+            margin: 5px;
+            padding: 4px;
+            border-radius: 4px;
+            &:hover{
+                background: $r-blue;
+                color: $r-yellow;
+            }
         }
     }
 }
+

@@ -1,18 +1,17 @@
-export default function DateWrapperController(airportCode) {
+export default function DateWrapperController(AiportsService) {
     'ngInject';
 
     const ctrl = this;
-
     ctrl.originsList;
-    ctrl.destinationsList = [];
 
     ctrl.travel = { from: '', to: '' };
 
     ctrl.$onInit = () => {
-        ctrl.airports = airportCode.mock.airports;
-        ctrl.originsList = [...ctrl.airports];
-        ctrl.destinationsList = [...ctrl.airports];
-        // ctrl.airportFiltered = [...ctrl.airports];
+        AiportsService.getAirportsList().then( data => {
+            ctrl.airports = data.airports;
+            ctrl.originsList = [...ctrl.airports];
+            ctrl.destinationsList = [...ctrl.airports];
+        });
     }
 
     ctrl.selectOrigin = (airport) => {

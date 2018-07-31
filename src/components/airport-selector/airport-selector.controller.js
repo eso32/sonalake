@@ -5,7 +5,6 @@ export default function AirportSelectorController() {
 
     ctrl.$onChanges = (changes) => {
         if (!ctrl.airports) return;
-        console.log('changes: ', changes);
         ctrl.airportsList = [...ctrl.airports];
     }
 

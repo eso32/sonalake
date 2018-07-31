@@ -1,6 +1,6 @@
 import moment from 'moment';
 
-export default function DateWrapperController($scope, $filter, airportCode) {
+export default function DateWrapperController($scope, $filter) {
   'ngInject';
   const ctrl = this;
 
