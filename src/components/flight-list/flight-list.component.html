@@ -1,22 +1,7 @@
 <div class="flights-list" ng-class="{'nothing-to-show' : !$ctrl.flights.length}">
-    <span ng-show="$ctrl.flights.length" class="flights-header">We have found {{$ctrl.flights.length}} flights</span>
+    <span ng-show="$ctrl.flights.length" class="flights-header">We have found {{$ctrl.flights.length}} {{$ctrl.flights.length === 1 ? 'flight' : 'flights'}}</span>
     <span ng-hide="$ctrl.flights.length" class="flights-header">We haven't found any flights for you :(<br/>Try changing the search criteria</span>
 
-    <div class="single-flight"
-        ng-repeat="flight in $ctrl.flights">
-        <div class="flight-cell"><span>{{flight.price | currency: flight.currency}}</span>
-        </div><div class="flight-cell"><span>{{flight.dateFrom | date: "EEE d MMM"}}<br/>{{flight.dateFrom | date: "h:mm"}}</span>
-        </div><div class="flight-cell">
-            <span style="left: 20px">
-            {{$ctrl.params.origin}}
-            </span>
-            <svg style="height: 50px" viewBox="0 0 650 450" preserveAspectRatio="none">
-                    <path d="m586.036438,134.370255c16.989136,7.89653 39.912537,7.89653 39.912537,29.636063c0,51.330276 -182.604462,81.936249 -189.406006,81.936249l-60.297577,153.046143c-4.25824,11.837402 -10.200653,14.813385 -17.00705,15.783478l-19.54541,1.977814l0,-106.613525l-38.21051,-39.506226c-4.253387,0 -28.898346,4.915497 -79.839752,4.915497c-59.457977,0 -75.601181,-2.94278 -79.848373,-2.94278l-6.781372,33.563904c-0.864349,5.942352 -15.304062,8.889496 -17.842087,4.938965l-30.587967,-47.397491c-5.934082,0 -21.228706,-1.949097 -21.228706,-7.895782c0,-7.873627 2.546173,-10.844421 5.942871,-12.812775l-64.552989,-70.117188c-4.235055,-4.921387 11.053231,-14.788742 24.62791,-6.920563l62.859215,34.551773l-4.253571,-57.261627l14.445419,-2.929749c5.096428,-0.998657 16.155235,7.902191 19.537453,11.819244l44.183022,55.298386l76.435562,-16.795471l-35.683563,-42.419968l-167.311821,-122.436813l14.419373,-12.844366c0,0 3.408733,-3.945448 15.293991,-3.945448l332.105614,150.08884l103.628754,-22.709824c4.242035,-1.004333 22.088715,-12.840607 43.31662,-12.840607c22.950989,0 22.950989,4.919479 35.688416,10.833847"/>
-            </svg>
-            <span style="left: auto; right: 10px">
-                {{$ctrl.params.dest}}
-            </span>
-        </div><div class="flight-cell"><span>{{flight.dateTo | date: "EEE d MMM"}}<br/>{{flight.dateTo | date: "h:mm"}}</span>
-        </div><div class="flight-cell"><button>Book now</button></div>
-    </div>
+    <flight-info ng-repeat="flight in $ctrl.flights" flight="flight" params="$ctrl.params"></flight-info>
+
 </div>

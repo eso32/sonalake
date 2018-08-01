@@ -1,0 +1,135 @@
+$r-blue: #2b82ea;
+$r-darkblue: #271496;
+$r-yellow: #f0d000;
+
+.single-flight{
+    background: #f5f5f5;
+    min-height: 100px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+    border-radius: 2px;
+    display: flex;
+    padding: 0 10px;
+    &:hover{
+        background: white;
+    }
+    .flight-cell{
+        min-height: 100%;
+        width: 25%;
+        font-size: 20px;
+        justify-content:center;
+        position: relative;
+        &:nth-child(1){
+            width: 10%;
+        }
+        &:nth-last-child(1){
+            width: 15%;
+        }
+        svg{
+            width: 30%; 
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 45%;
+            transform: translate(-50%, -50%);
+            fill: $r-blue;
+        }
+        .small-screen{
+            display: none;
+        }
+        span, button{
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+        }
+        span{
+            &.origin{
+                position: absolute;
+                left: 20px;
+            }
+            &.dest{
+                left: auto; 
+                right: 10px;
+                position: absolute;
+            }
+        }
+        button{
+            background: $r-yellow;
+            border: none;
+            border-radius: 4px;
+            padding: 5px 10px;
+            color: $r-darkblue;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    }
+}
+
+@media only screen and (max-width: 1125px) {
+    .single-flight{
+        .flight-cell{
+            &.date{
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    .single-flight{
+        .flight-cell{
+            &:nth-child(1){
+                font-size: 14px;
+            }
+            svg{
+                display: none;
+            }
+            .small-screen{
+                text-align: center;
+                width: 30%; 
+                height: auto;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                fill: $r-blue;
+                display: block;
+            }
+            span{
+                &.origin{
+                    top: 5px;
+                    left: 50%;
+                    transform: translate(-50%);
+                    display: block;
+                }
+                &.dest{
+                    left: 50%;
+                    transform: translate(-50%);
+                    bottom: 5px;
+                    display: block;
+                    top: auto;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .single-flight{
+        .flight-cell{
+            width:100%;
+            &:nth-child(1){
+                width:100%;
+            }
+            &:nth-child(3){
+                display: none;
+            }
+            &:nth-last-child(1){
+                width:100%;
+            }
+        }
+    }
+}

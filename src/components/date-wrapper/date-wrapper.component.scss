@@ -14,3 +14,12 @@ date-wrapper{
         }
     }
 }
+
+@media only screen and (max-width: 690px) {
+    date-wrapper{
+        .control{
+            display: block;
+            width: 100%;
+        }
+    }
+}

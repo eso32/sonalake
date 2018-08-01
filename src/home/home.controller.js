@@ -2,10 +2,14 @@ export default function HomeController($state) {
     'ngInject';
 
     const ctrl = this;
-    ctrl.travel = {}
 
     ctrl.$onInit = () => {
-        ctrl.travel = { originDate: ctrl.startDate, destDate: ctrl.endDate };
+        ctrl.travel = {
+            origin: undefined, 
+            startDate: undefined, 
+            dest: undefined, 
+            endDate: undefined
+        };
     }
 
     ctrl.updateTravel = (travel) => {
@@ -13,14 +17,32 @@ export default function HomeController($state) {
         ctrl.travel = Object.assign(ctrl.travel, travel);
     }
 
-    ctrl.findFlights = () => {
+    ctrl.findFlights = (travel) => {
+
+        console.log('validation: ', ctrl.validateTravelObject(travel));
+
+        if(!ctrl.validateTravelObject(travel)) {
+            ctrl.notify = true;
+            return
+        }
+
+        ctrl.notify = false;
+
         $state.go('home.flightList', {
-            origin: ctrl.travel.origin.iata, 
-            originDate: ctrl.travel.startDate, 
-            dest: ctrl.travel.dest.iata, 
-            destDate: ctrl.travel.endDate}
+            origin: travel.origin.iata, 
+            originDate: travel.startDate, 
+            dest: travel.dest.iata, 
+            destDate: travel.endDate}
         )
 
+    }
+
+    ctrl.validateTravelObject = (travel) => {
+        let travelKeys = Object.keys(travel);
+
+        if(travelKeys.find( key => !travel[key])) return false;
+
+        return true;
     }
 
 }
