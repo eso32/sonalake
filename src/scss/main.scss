@@ -1,4 +1,5 @@
-//Main modules definitions
-$r-blue: #2b82ea;
-$r-darkblue: #271496;
 $r-yellow: #f0d000;
+
+.input.is-active, .input:active, .input:focus, .textarea.is-active, .textarea:active, .textarea:focus{
+    border: 1px solid $r-yellow;
+}

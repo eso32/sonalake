@@ -4,8 +4,6 @@ import './date-wrapper.component.scss';
 
 export const DateWrapperComponent = {
   bindings: {
-    startDate: '=',
-    endDate: '=',
     updateTravel: '&'
   },
   template,

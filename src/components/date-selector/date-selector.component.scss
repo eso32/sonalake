@@ -6,7 +6,6 @@ date-selector{
     position: relative;
     input.input.is-medium{
         padding-left: 50px;
-        // border: 2px solid $r-yellow;
         &::-webkit-calendar-picker-indicator{
             color: $r-blue;
             height: 1.5em;

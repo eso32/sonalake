@@ -13,14 +13,10 @@ export default function HomeController($state) {
     }
 
     ctrl.updateTravel = (travel) => {
-        console.log('got object! ', travel);
         ctrl.travel = Object.assign(ctrl.travel, travel);
     }
 
     ctrl.findFlights = (travel) => {
-
-        console.log('validation: ', ctrl.validateTravelObject(travel));
-
         if(!ctrl.validateTravelObject(travel)) {
             ctrl.notify = true;
             return
